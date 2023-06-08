@@ -55,3 +55,48 @@ type MyPoint = {
 };
 
 const myExPoint: MyPoint = { x: 12, y: 23, z: 33 };
+
+// Readonly modifier
+type User = {
+  readonly id: number;
+  username: string;
+};
+const user: User = {
+  id: 123456,
+  username: "thomas_shelby",
+};
+
+console.log(user.id);
+
+// Intersection Type
+
+type Circle = {
+  radius: number;
+};
+
+type Colorful = {
+  color: string;
+};
+type ColorfulCircle = Circle & Colorful;
+
+const happyFace: ColorfulCircle = {
+  radius: 12,
+  color: "Red",
+};
+
+type Animal = {
+  age: number;
+  breed: string;
+};
+
+type ColorfulAnimal = Colorful &
+  Animal & {
+    gender: string;
+  };
+
+const listy: ColorfulAnimal = {
+  color: "Green",
+  age: 12,
+  breed: "Moyna",
+  gender: "Female",
+};
